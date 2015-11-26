@@ -1,7 +1,7 @@
 <div class="modal fade" id="tambah_data" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-    <form class="form-horizontal" method="POST" action="module_seminar/action_seminar.php">
+    <form class="form-horizontal" method="POST" action="module_seminar/action_seminar.php" enctype="multipart/form-data">
         <div class="modal-header">
           <p><i class="fa fa-user-plus"></i> Tambah</p>
         </div>
@@ -46,6 +46,19 @@
               <label for="admin-name" class="col-lg-4 control-label"> Kapasitas </label>
               <div class="col-lg-8">
                 <input type="text" class="form-control" name="kapasitas" placeholder="kapasitas">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="admin-name" class="col-lg-4 control-label"> kode lokasi </label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" name="kode_lokasi" placeholder="kode lokasi">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="admin-name" class="col-lg-4 control-label"> Banner </label>
+              <div class="col-lg-8">
+                <input type="file" class="form-control" name="banner">
+                <p class="help-block">Format gambar(jpg/jpeg) dan Ukuran Maksimal 5Mb</p>
               </div>
             </div>
         </div>

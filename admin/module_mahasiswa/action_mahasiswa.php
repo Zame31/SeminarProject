@@ -29,7 +29,7 @@ elseif ($module=='data_mahasiswa' AND $act=='hapusmahasiswa'){
 elseif ($module=='data_mahasiswa' AND $act=='export'){
   header("Content-type: application/vnd-ms-excel");
   header("Content-Disposition: attachment; filename=data_mahasiswa.xls");
-  include "table_mahasiswa.php";
+  include "cetak_excel.php";
 }
 
 //TAMBAH MAHASISWA

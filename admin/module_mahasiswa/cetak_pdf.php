@@ -17,7 +17,7 @@ $tahun = date("Y");
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
 					<div class="stat">Jl. Kemana Saja Hatiku Senang - Bandung</div>
-					<div class="sub-title">LAPORAN DATA SEMINAR</div>
+					<div class="sub-title">LAPORAN DATA MAHASISWA</div>
 					<div class="sub-stat">TAHUN 2015/2016</div>
 					<table>
 						<tr>
@@ -36,32 +36,24 @@ include "../../main/connection.php";
 	$strhtml .= "<table class='table'>
 					<tr>
 			          <th>No</th>
-			          <th>Kode Seminar</th>
-			          <th>Tema</th>
-			          <th>Nama Seminar</th>
-			          <th>Penyelenggara</th>
-			          <th>Waktu</th>
-			          <th>Tanggal</th>
-			          <th>Kapasitas</th>
-			          <th>Kode Lokasi</th>
+			          <th>NIM</th>
+			          <th>Nama Mahasiswa</th>
+			          <th>Jurusan</th>
+			          <th>Telp/HP</th>
+			          <th>E-Mail</th>
+			          
 			        </tr>";
 	$no = 0;
-	$tampil_seminar = mysql_query("SELECT * FROM seminar ORDER BY kode_seminar");
-	while ($tampil=mysql_fetch_array($tampil_seminar)){
-	//Tanggal Format
-       include "/../../main/format_tanggal.php";
-
+	$tampil_mahasiswa = mysql_query("SELECT * FROM mahasiswa ORDER BY nim");
+	while ($tampil=mysql_fetch_array($tampil_mahasiswa)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-			         <td>$tampil[kode_seminar]</td>
-		             <td>$tampil[tema]</td>
-		             <td>$tampil[nama_seminar]</td>
-		             <td>$tampil[penyelenggara]</td>
-		             <td>$tampil[waktu]</td>
-		             <td>$tanggal</td>
-		             <td>$tampil[kapasitas]</td>
-		             <td>$tampil[kode_lokasi]</td>
-		        </tr>";
+			         <td>$tampil[nim]</td>
+			         <td>$tampil[nama]</td>
+			         <td>$tampil[jurusan]</td>
+			         <td>$tampil[telepon]</td>
+			         <td>$tampil[email]</td>
+			      </tr>";
 	}
 	$strhtml .= "</table>";
 

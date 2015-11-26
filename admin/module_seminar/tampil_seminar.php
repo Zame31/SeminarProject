@@ -38,6 +38,8 @@
           <th>Waktu</th>
           <th>Tanggal</th>
           <th>Kapasitas</th>
+          <th>kode Lokasi</th>
+          <th>Banner</th>
           <th width="50px">Aksi</th>
         </tr>
       </thead>
@@ -45,16 +47,8 @@
 <?php
     $no=1;
     while ($tampil=mysql_fetch_array($tampilkan)){
-      //Tanggal Format
-       $date = date($tampil['tanggal']);
-       $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
-     
-       $tahun = substr($date, 0, 4);
-       $bulan = substr($date, 5, 2);
-       $tgl   = substr($date, 8, 2);
-                 
-       $tanggal = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;
-     
+      include "/../../main/format_tanggal.php"; 
+    
        echo "<tr><td>$no</td>
              <td class='tab-col'>$tampil[kode_seminar]</td>
              <td>$tampil[tema]</td>
@@ -63,6 +57,14 @@
              <td>$tampil[waktu]</td>
              <td>$tanggal</td>
              <td>$tampil[kapasitas]</td>
+             <td>$tampil[kode_lokasi]</td>
+             <td>";
+             if ($tampil['banner']!='belum ada banner'){
+                echo " <img src='pic/pic_seminar/small_$tampil[banner]'> </td>";
+             }else {
+              echo "$tampil[banner]";
+             }
+             echo "
              <td><a href='?module=data_seminar&act=editseminar&id=$tampil[kode_seminar]' class='fa fa-edit'></a>
              <a class='fa fa-remove' href=javascript:confirmdelete('$action?module=data_seminar&act=hapusseminar&id=$tampil[kode_seminar]')></a></td>
              </tr>";
@@ -72,4 +74,6 @@
         </tbody>
         </table>
         </div>";
+
+
 ?>

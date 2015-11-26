@@ -8,7 +8,7 @@ $edit=mysql_query("SELECT * FROM seminar WHERE kode_seminar='$_GET[id]'");
       <!--title-->
       <div class="edit-title"><p>Edit Seminar</p></div>
 <?php
-     echo "<form class='form-horizontal' method=POST action=$action?module=data_seminar&act=update_seminar>
+     echo "<form class='form-horizontal' method=POST action='$action?module=data_seminar&act=update_seminar' enctype='multipart/form-data'>
           <input type='hidden' name='id' value='$ed[kode_seminar]'>
           <div class='form-group'>
             <label class='col-lg-2 control-label'> Kode Seminar</label>
@@ -52,6 +52,19 @@ $edit=mysql_query("SELECT * FROM seminar WHERE kode_seminar='$_GET[id]'");
               <input type='text' class='form-control' name='kapasitas' value='$ed[kapasitas]'>
             </div>
           </div>
+          <div class='form-group'>
+            <label for='admin-usr' class='col-lg-2 control-label'> kode lokasi</label>
+            <div class='col-lg-10'>
+              <input type='text' class='form-control' name='kode_lokasi' value='$ed[kode_lokasi]'>
+            </div>
+          </div>
+           <div class='form-group'>
+            <label for='admin-usr' class='col-lg-2 control-label'> Banner</label>
+            <div class='col-lg-10'>
+                <input type='file' class='form-control' name='banner'>
+                <p class='help-block'>Format gambar(jpg/jpeg) dan Ukuran Maksimal 5Mb</p>
+              </div>
+            </div>
           <div class='button-edit'>
             <button class='button-foot' onclick=self.history.back()>Close</button>
             <button class='button-foot' type='submit'>Update</button>

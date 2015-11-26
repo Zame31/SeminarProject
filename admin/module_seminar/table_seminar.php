@@ -29,7 +29,7 @@ td {
 
 </style>
 <?php
-date_default_timezone_set('Asia/Jakarta');
+date_default_tim ezone_set('Asia/Jakarta');
 
 //Array Hari
 $array_hari = array(1=>"Senin","Selasa","Rabu","Kamis","Jumat", "Sabtu","Minggu");
@@ -68,7 +68,9 @@ echo '
           <th>Nama Seminar</th>
           <th>Penyelenggara</th>
           <th>Waktu</th>
+          <th>Tanggal</th>
           <th>Kapasitas</th>
+          <th>kode Lokasi</th>
         </tr>
       </thead>
       <tbody border="1">
@@ -77,13 +79,17 @@ echo '
 	$tampil_seminar = mysql_query("SELECT * FROM seminar ORDER BY kode_seminar");        
     $no=1;
     while ($tampil=mysql_fetch_array($tampil_seminar)){
+      //Tanggal Format
+      include "/../../main/format_tanggal.php";
        echo "<tr><td>$no</td>
              <td class='tab-col'>$tampil[kode_seminar]</td>
              <td>$tampil[tema]</td>
              <td>$tampil[nama_seminar]</td>
              <td>$tampil[penyelenggara]</td>
              <td>$tampil[waktu]</td>
+             <td>$tanggal</td>
              <td>$tampil[kapasitas]</td>
+             <td>$tampil[kode_lokasi]</td>
             </tr>
              ";
         $no++;

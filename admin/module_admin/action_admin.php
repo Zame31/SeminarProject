@@ -5,8 +5,6 @@ include "../../main/connection.php";
 $module=$_GET['module'];
 $act=$_GET['act'];
 
-
-
 //UPDATE ADMIN
 if ($module=='data_admin' AND $act=='update_admin'){
   if (empty($_POST[password])) {
@@ -14,7 +12,7 @@ if ($module=='data_admin' AND $act=='update_admin'){
                                   nama_lengkap   = '$_POST[nama_lengkap]',
                                   alamat         = '$_POST[alamat]',
                                   email          = '$_POST[email]',
-                                  telp        	= '$_POST[telp]',
+                                  telp        	 = '$_POST[telp]',
                                   blokir         = '$_POST[blokir]'                  
                            WHERE  id_session     = '$_POST[id]'");
   }
@@ -26,9 +24,9 @@ if ($module=='data_admin' AND $act=='update_admin'){
                                   nama_lengkap    = '$_POST[nama_lengkap]',
                                   alamat          = '$_POST[alamat]',
                                   email           = '$_POST[email]',
-                                  telp         = '$_POST[telp]',
+                                  telp            = '$_POST[telp]',
                                   blokir          = '$_POST[blokir]'
-                           WHERE id_session      = '$_POST[id]'");
+                           WHERE id_session       = '$_POST[id]'");
   }
   header('location:../admin.php?module='.$module);
 }
@@ -42,7 +40,7 @@ elseif ($module=='data_admin' AND $act=='hapusadmin'){
 elseif ($module=='data_admin' AND $act=='export'){
   header("Content-type: application/vnd-ms-excel");
   header("Content-Disposition: attachment; filename=data_admin.xls");
-  include "table_admin.php";
+  include "cetak_excel.php";
 }
 //TAMBAH ADMIN
 else {

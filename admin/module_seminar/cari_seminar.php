@@ -6,6 +6,8 @@
                                nama_seminar like '%$cari%' or
                                penyelenggara like '%$cari%' or
                                waktu like '%$cari%' or
+                               tanggal like '%$cari%' or
+                               kode_lokasi like '%$cari%' or
                                kapasitas like '%$cari%'");
 ?>
     <div class="title-content">
@@ -46,7 +48,9 @@
           <th>Nama Seminar</th>
           <th>Penyelenggara</th>
           <th>Waktu</th>
+          <th>Tanggal</th>
           <th>Kapasitas</th>
+          <th>Kode Lokasi</th>
           <th width="80px">Aksi</th>
         </tr>
       </thead>
@@ -54,13 +58,24 @@
 <?php        
     $no=1;
     while ($tampil=mysql_fetch_array($tampilkan)){
+    //Tanggal Format
+       include "/../../main/format_tanggal.php";
        echo "<tr><td>$no</td>
             <td class='tab-col'>$tampil[kode_seminar]</td>
              <td>$tampil[tema]</td>
              <td>$tampil[nama_seminar]</td>
              <td>$tampil[penyelenggara]</td>
              <td>$tampil[waktu]</td>
+             <td>$tanggal</td>
              <td>$tampil[kapasitas]</td>
+             <td>$tampil[kode_lokasi]</td>
+             <td>";
+             if ($tampil['banner']!='belum ada banner'){
+                echo " <img src='pic/pic_seminar/small_$tampil[banner]'> </td>";
+             }else {
+              echo "$tampil[banner]";
+             }
+             echo " 
              <td><a href='?module=data_seminar&act=editseminar&id=$tampil[kode_seminar]' class='fa fa-edit'></a>
              <a class='fa fa-remove' href=javascript:confirmdelete('$action?module=data_seminar&act=hapusseminar&id=$tampil[kode_seminar]')></a></td>
              </tr>";

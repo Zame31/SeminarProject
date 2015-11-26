@@ -21,7 +21,7 @@ switch (@$_GET['act']) {
     include "edit_seminar.php"; 
   break;
   case 'cariseminar':
-    //EDIT ADMIN
+    //CARI ADMIN
     include "cari_seminar.php"; 
   break;  
 }

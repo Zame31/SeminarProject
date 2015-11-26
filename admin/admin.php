@@ -26,10 +26,10 @@
     <ul class="nav nav-pills nav-stacked side-nav">
       <!--title-->
       <div class="title">seminar <span class="blue">kampus</span></div>
-      <!--menu-->
+      <!--menu--> <!--
       <li class="menu-admin" data-toggle="collapse" data-parent="#p1" href="#pv1">
         <a class="nav-sub-container">
-          <!--
+         
           <div class="admin">
             <span>Admin</span>
             ADMIN
