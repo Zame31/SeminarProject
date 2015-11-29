@@ -55,6 +55,18 @@
               </div>
             </div>
             <div class="form-group">
+              <label for="admin-name" class="col-lg-4 control-label"> Harga </label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" name="harga" placeholder="Harga">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="admin-name" class="col-lg-4 control-label"> Fasilitas </label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" name="fasilitas" placeholder="Fasilitas">
+              </div>
+            </div>
+            <div class="form-group">
               <label for="admin-name" class="col-lg-4 control-label"> Banner </label>
               <div class="col-lg-8">
                 <input type="file" class="form-control" name="banner">

@@ -11,11 +11,12 @@ $act=$_GET['act'];
 if ($module=='data_seminar' AND $act=='update_seminar'){
 
     $lokasi_file    = $_FILES['banner']['tmp_name'];
-  $tipe_file      = $_FILES['banner']['type'];
-  $nama_file      = $_FILES['banner']['name'];
-  $direktori_file = "../pic/pic_seminar/$nama_file";
-  UploadImage($nama_file);
-
+    $tipe_file      = $_FILES['banner']['type'];
+    $nama_file      = $_FILES['banner']['name'];
+    $direktori_file = "../pic/pic_seminar/$nama_file";
+    UploadImage($nama_file);
+  
+  if(empty($nama_file)){
     mysql_query("UPDATE seminar SET 
                                     tema           = '$_POST[tema]',
                                     nama_seminar   = '$_POST[nama_seminar]',
@@ -24,9 +25,26 @@ if ($module=='data_seminar' AND $act=='update_seminar'){
                                     tanggal        = '$_POST[tanggal]',
                                     kode_lokasi    = '$_POST[kode_lokasi]',
                                     kapasitas      = '$_POST[kapasitas]',
-                                    banner          = '$nama_file'      
+                                    harga          = '$_POST[harga]',
+                                    fasilitas      = '$_POST[fasilitas]',
+                                    banner         = '$_POST[banner_def]'    
                            WHERE    kode_seminar   = '$_POST[id]'");
-  
+  }
+  else {
+     mysql_query("UPDATE seminar SET 
+                                    tema           = '$_POST[tema]',
+                                    nama_seminar   = '$_POST[nama_seminar]',
+                                    penyelenggara  = '$_POST[penyelenggara]',
+                                    waktu          = '$_POST[waktu]',
+                                    tanggal        = '$_POST[tanggal]',
+                                    kode_lokasi    = '$_POST[kode_lokasi]',
+                                    kapasitas      = '$_POST[kapasitas]',
+                                    harga          = '$_POST[harga]',
+                                    fasilitas      = '$_POST[fasilitas]',
+                                    banner         = '$nama_file'      
+                           WHERE    kode_seminar   = '$_POST[id]'");
+
+  }
   header('location:../admin.php?module='.$module);
 }
 
@@ -52,7 +70,9 @@ else {
   $waktu                     = $_POST["waktu"];
   $tanggal                   = $_POST["tanggal"];
   $kapasitas                 = $_POST["kapasitas"]; 
-  $kode_lokasi                 = $_POST["kode_lokasi"]; 
+  $kode_lokasi               = $_POST["kode_lokasi"];
+  $harga                     = $_POST["harga"]; 
+  $fasilitas                 = $_POST["fasilitas"];  
   //GAMBAR
   $lokasi_file    = $_FILES['banner']['tmp_name'];
   $tipe_file      = $_FILES['banner']['type'];
@@ -65,8 +85,8 @@ else {
           window.location=(href='../admin.php?module=data_seminar')</script>";
       }else{
                 UploadImage($nama_file);                             
-  $sql    = "INSERT INTO seminar(kode_seminar,tema,nama_seminar,penyelenggara,waktu,tanggal,kode_lokasi,kapasitas,banner) 
-              values ('$kode_seminar','$tema','$nama_seminar','$penyelenggara','$waktu','$tanggal','$kode_lokasi','$kapasitas','$nama_file')";
+  $sql    = "INSERT INTO seminar(kode_seminar,tema,nama_seminar,penyelenggara,waktu,tanggal,kode_lokasi,kapasitas,harga,fasilitas,banner) 
+              values ('$kode_seminar','$tema','$nama_seminar','$penyelenggara','$waktu','$tanggal','$kode_lokasi','$kapasitas','$harga','$fasilitas','$nama_file')";
   $kueri = mysql_query($sql);
 }
   header('location:../admin.php?module=data_seminar');

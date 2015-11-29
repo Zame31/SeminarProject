@@ -57,7 +57,7 @@ a:focus {
 	overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
-	width: 250px;
+	width: 170px;
 	height: 100%;
 	border: none;
 	border-radius: 0;
@@ -116,7 +116,7 @@ a:focus {
 /*   CONTENT  	                     */
 /*---------------------------------------*/
 section {
-	margin-left: 250px;
+	margin-left: 170px;
 	padding: 30px 50px;
 }
 .title-content {

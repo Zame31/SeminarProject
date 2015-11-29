@@ -58,10 +58,24 @@ $edit=mysql_query("SELECT * FROM seminar WHERE kode_seminar='$_GET[id]'");
               <input type='text' class='form-control' name='kode_lokasi' value='$ed[kode_lokasi]'>
             </div>
           </div>
+          <div class='form-group'>
+            <label for='admin-usr' class='col-lg-2 control-label'> Harga</label>
+            <div class='col-lg-10'>
+              <input type='text' class='form-control' name='harga' value='$ed[harga]'>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label for='admin-usr' class='col-lg-2 control-label'> fasilitas</label>
+            <div class='col-lg-10'>
+              <input type='text' class='form-control' name='fasilitas' value='$ed[fasilitas]'>
+            </div>
+          </div>
            <div class='form-group'>
             <label for='admin-usr' class='col-lg-2 control-label'> Banner</label>
             <div class='col-lg-10'>
+            <input type='text' class='form-control' name='banner_def' value='$ed[banner]'>
                 <input type='file' class='form-control' name='banner'>
+                
                 <p class='help-block'>Format gambar(jpg/jpeg) dan Ukuran Maksimal 5Mb</p>
               </div>
             </div>

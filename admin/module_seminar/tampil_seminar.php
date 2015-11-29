@@ -39,6 +39,8 @@
           <th>Tanggal</th>
           <th>Kapasitas</th>
           <th>kode Lokasi</th>
+          <th>Harga</th>
+          <th>Fasilitas</th>
           <th>Banner</th>
           <th width="50px">Aksi</th>
         </tr>
@@ -58,6 +60,8 @@
              <td>$tanggal</td>
              <td>$tampil[kapasitas]</td>
              <td>$tampil[kode_lokasi]</td>
+             <td>$tampil[harga]</td>
+             <td>$tampil[fasilitas]</td>
              <td>";
              if ($tampil['banner']!='belum ada banner'){
                 echo " <img src='pic/pic_seminar/small_$tampil[banner]'> </td>";
