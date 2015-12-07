@@ -7,6 +7,8 @@
                                telepon like '%$cari%' or
                               email like '%$cari%'");
 ?>
+
+
     <div class="title-content">
     <span>Management</span>
     data mahasiswa
@@ -27,7 +29,24 @@
         </form>
         <a href="?module=data_mahasiswa" class="button-reset">Reset</a>
       </div>
-      
+       <div class="col-md-6">
+        <div class="btn-group" role="group" aria-label="fungsional">
+          <a type="button" class="btn btn-default" href="#tambah_data" data-toggle="modal"><i class="fa fa-user-plus"></i></a>
+          <a type="button" class="btn btn-default" href="module_mahasiswa/action_mahasiswa.php?module=data_mahasiswa&act=export"><i class="fa fa-download"> Excel</i></a>
+          
+          <form action="module_mahasiswa/cetak_pdf_cari.php" method="post">
+            <?php 
+              echo "
+                        <input name='cari2' type='hidden' class='btn btn-default' value='$cari'>
+                  ";
+            ?>
+            <button class="btn btn-default" type="submit"><i class="fa fa-print"></i></button>
+          </form>
+
+
+          <!--<a type="button" class="btn btn-default" href="module_mahasiswa/cetak_pdf_cari.php"><i class="fa fa-print"></i></a>-->
+        </div>
+      </div>
     </div>
     <!--TABLE-->
     <table cellpadding="0" cellspacing="0" border="0" class="table table-hover tab-mar-top" id="example">
