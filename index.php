@@ -88,7 +88,24 @@
           <div class='modal fade' id='detail$tampil[kode_seminar]'  role='dialog'>
             <div class='modal-dialog'>
               <div class='modal-content'>
-                <img src='admin/pic/pic_seminar/$tampil[banner]' class='img-responsive'/>
+                <table border='0'>
+                <tr> 
+                  <td>Pelaksanaan </td>
+                  <td> : $tanggal </td>
+                </tr>
+                <tr> 
+                  <td>Pukul </td>
+                  <td> : $tampil[waktu] </td>
+                </tr>
+                <tr> 
+                  <td>Harga </td>
+                  <td> : Rp. $tampil[harga],00 </td>
+                </tr>
+                <tr> 
+                  <td>Tempat </td>
+                  <td> : $tampil[kode_lokasi] </td>
+                </tr>
+              </table>
               </div>
             </div>
           </div>
@@ -96,7 +113,7 @@
           <div class='modal fade' id='daftar$tampil[kode_seminar]' role='dialog'>
             <div class='modal-dialog'>
               <div class='modal-content'>
-                <form class='form-horizontal' method='POST' action='user/action_user.php'>
+                <form class='form-horizontal' method='POST' action='user/action_user.php?module=data_user&act=tambah'>
                 <div class='modal-header'>
                   <p> Daftar Seminar</p>
                 </div>

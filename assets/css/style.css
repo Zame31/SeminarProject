@@ -166,7 +166,8 @@ section {
 		}
 		/*FUNGSIONAL*/
 		.btn-group {
-			float: right;
+			display: block;
+    		margin-left: 301px;
 		}
 		.btn-group .btn {
 			background: #202020;

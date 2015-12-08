@@ -46,7 +46,7 @@ echo '
 <div class="title">SEMINAR KAMPUS</div>
           <div class="stat">Jl. Kemana Saja Hatiku Senang - Bandung</div>
           <hr size="2">
-          <div class="sub-title">LAPORAN DATA PENDAFTARAN</div>
+          <div class="sub-title">LAPORAN DATA TAMU SEMINAR</div>
           <div class="sub-stat">TAHUN 2015/2016</div>
           <br>
           Tanggal Dicetak : '.$hari . ", ".$tanggal." ".$bulan." ".$tahun.'
@@ -63,10 +63,8 @@ echo '
 <table border="1">
         <tr>
           <th>No</th>
-          <th>No Daftar</th>
-          <th>Tanggal Daftar</th>
           <th>Kode Seminar</th>
-          <th>NIM</th>
+          <th>Kode Tamu</th>
          
           
         </tr>
@@ -74,14 +72,12 @@ echo '
       <tbody border="1">
 <?php
   include "../../main/connection.php";
-  $tampil_seminar = mysql_query("SELECT * FROM pendaftaran ORDER BY kode_seminar");        
+  $tampil_seminar = mysql_query("SELECT * FROM tamu_seminar ORDER BY kode_seminar");        
     $no=1;
     while ($tampil=mysql_fetch_array($tampil_seminar)){
        echo "<tr><td>$no</td>
-       <td>$tampil[no_daftar]</td>
-       <td>$tampil[tanggal_daftar]</td>
              <td class='tab-col'>$tampil[kode_seminar]</td>
-             <td>$tampil[nim]</td>
+             <td>$tampil[kode_tamu]</td>
 
             </tr>
              ";

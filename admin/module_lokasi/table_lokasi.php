@@ -46,14 +46,14 @@ echo '
 <div class="title">SEMINAR KAMPUS</div>
           <div class="stat">Jl. Kemana Saja Hatiku Senang - Bandung</div>
           <hr size="2">
-          <div class="sub-title">LAPORAN DATA PENDAFTARAN</div>
+          <div class="sub-title">LAPORAN DATA LOKASI</div>
           <div class="sub-stat">TAHUN 2015/2016</div>
           <br>
           Tanggal Dicetak : '.$hari . ", ".$tanggal." ".$bulan." ".$tahun.'
           <br>
           Pukul : '.date("h:i:sa").'
           <br>
-          Oleh : M.Fuad Alfarih S.Kom, M.T
+          Oleh : Zamzam Nurzaman S.Kom, M.T
           
             <br>
 '
@@ -63,26 +63,23 @@ echo '
 <table border="1">
         <tr>
           <th>No</th>
-          <th>No Daftar</th>
-          <th>Tanggal Daftar</th>
-          <th>Kode Seminar</th>
-          <th>NIM</th>
-         
-          
+          <th>Kode lokasi</th>
+          <th>Nama Lokasi</th>
+          <th>Alamat</th>
+          <th>Harga Sewa</th>
         </tr>
       </thead>
       <tbody border="1">
 <?php
-  include "../../main/connection.php";
-  $tampil_seminar = mysql_query("SELECT * FROM pendaftaran ORDER BY kode_seminar");        
+	include "../../main/connection.php";
+	$tampil_lokasi = mysql_query("SELECT * FROM lokasi ORDER BY kode_lokasi");        
     $no=1;
-    while ($tampil=mysql_fetch_array($tampil_seminar)){
+    while ($tampil=mysql_fetch_array($tampil_lokasi)){
        echo "<tr><td>$no</td>
-       <td>$tampil[no_daftar]</td>
-       <td>$tampil[tanggal_daftar]</td>
-             <td class='tab-col'>$tampil[kode_seminar]</td>
-             <td>$tampil[nim]</td>
-
+             <td class='tab-col'>$tampil[kode_lokasi]</td>
+             <td>$tampil[nama_lokasi]</td>
+             <td>$tampil[alamat]</td>
+             <td>$tampil[harga_sewa]</td>
             </tr>
              ";
         $no++;

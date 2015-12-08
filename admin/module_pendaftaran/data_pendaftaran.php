@@ -10,23 +10,23 @@
 session_start();
 
 //CONTENT
-$action ="module_admin/action_admin.php";
+$action ="module_pendaftaran/action_pendaftaran.php";
 switch (@$_GET['act']) {
   default:
-    //TAMPIL ADMIN
-    include "tampil_admin.php";
+    //TAMPIL pendaftaran
+    include "tampil_pendaftaran.php";
   break;
-  case 'editadmin':
-    //EDIT ADMIN
-    include "edit_admin.php"; 
+  case 'editpendaftaran':
+    //EDIT pendaftaran
+    include "edit_pendaftaran.php"; 
   break;
-  case 'cariadmin':
-    //EDIT ADMIN
-    include "cari_admin.php"; 
+  case 'caripendaftaran':
+    //EDIT pendaftaran
+    include "cari_pendaftaran.php"; 
   break;  
 }
 //ENDSWITCH
 
-  //TAMBAH ADMIN
-  include "tambah_admin.php";
+  //TAMBAH pendaftaran
+  include "tambah_pendaftaran.php";
 ?>

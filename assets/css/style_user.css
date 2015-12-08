@@ -118,3 +118,36 @@ section.list-seminar {
 	line-height: 25px;
 	font-size: 13px;
 }
+
+/*-----------tiket----*/
+.align {
+	    margin-top: 40px;
+}
+.tiket {
+	background: white;
+    width: 500px;
+    height: 250px;
+    border: 1px solid #ff955b;
+    margin: 0 auto;
+}
+.tiket-title {
+    background: #ff955b;
+    color: #fff;
+    padding: 20px;
+    font-size: 24px;
+}
+.tiket-body {
+	padding: 10px 20px;
+    line-height: 24px;
+    font-size: 12px;
+}
+span.waktu {
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+a.tiket-button {
+	    margin-left: 750px;
+    margin-top: 10px;
+}

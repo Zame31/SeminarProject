@@ -1,18 +1,18 @@
 <?php
   $cari       = $_POST["cari"];
 	$tampilkan = 
-  mysql_query("SELECT * FROM pendaftaran
+  mysql_query("SELECT * FROM narasumber_seminar
                WHERE kode_seminar like '%$cari%' or 
-                     nim like '%$cari%'");
+                     kode_narasumber like '%$cari%'");
 ?>
     <div class="title-content">
     <span>Management</span>
-    data pendaftaran
+    data narasumber seminar
   <div class="content">
     <!--FUNGSIONAL-->
     <div class="row">
       <div class="col-md-6">
-        <form action="?module=data_pendaftaran&act=caripendaftaran" method="post">
+        <form action="?module=data_narasumber_seminar&act=carinarasumber_seminar" method="post">
           <div class="input-group search">
             <input name="cari" type="text" class="form-control" placeholder="Search for...">
             <span class="input-group-btn">
@@ -22,13 +22,13 @@
           </div>
 
         </form>
-        <a href="?module=data_pendaftaran" class="button-reset">Reset</a>
+        <a href="?module=data_narasumber_seminar" class="button-reset">Reset</a>
       </div>
       <div class="col-md-6">
         <div class="btn-group" role="group" aria-label="fungsional">
-          <a type="button" class="btn btn-default" href="#tambah_pendaftaran" data-toggle="modal"><i class="fa fa-user-plus"></i></a>
-          <a type="button" class="btn btn-default" href="module_pendaftaran/action_seminar.php?module=data_pendaftaran&act=export"><i class="fa fa-download"> Excel</i></a>
-          <a type="button" class="btn btn-default" href="module_pendaftaran/cetak_seminar.php"><i class="fa fa-print"></i></a>
+          <a type="button" class="btn btn-default" href="#tambah_narasumber_seminar" data-toggle="modal"><i class="fa fa-user-plus"></i></a>
+          <a type="button" class="btn btn-default" href="module_narasumber_seminar/action_seminar.php?module=data_narasumber_seminar&act=export"><i class="fa fa-download"> Excel</i></a>
+          <a type="button" class="btn btn-default" href="module_narasumber_seminar/cetak_seminar.php"><i class="fa fa-print"></i></a>
       </div>
     </div>
     <!--TABLE-->
@@ -37,7 +37,7 @@
         <tr>
           <th>No</th>
           <th class="tab-col">Kode Seminar</th>
-          <th>NIM</th>
+          <th>Kode Narasumber</th>
           
           <th width="80px">Aksi</th>
         </tr>
@@ -48,10 +48,10 @@
     while ($tampil=mysql_fetch_array($tampilkan)){
        echo "<tr><td>$no</td>
              <td class='tab-col'>$tampil[kode_seminar]</td>
-             <td>$tampil[nim]</td>
+             <td>$tampil[kode_narasumber]</td>
                      
-             <td><a href='?module=data_pendaftaran&act=editpendaftaran&id=$tampil[kode_seminar]' class='fa fa-edit'></a>
-             <a class='fa fa-remove' href=javascript:confirmdelete('$action?module=data_pendaftaran&act=hapuspendaftaran&id=$tampil[kode_seminar]')></a></td>
+             <td><a href='?module=data_narasumber_seminar&act=editnarasumber_seminar&id=$tampil[kode_seminar]' class='fa fa-edit'></a>
+             <a class='fa fa-remove' href=javascript:confirmdelete('$action?module=data_narasumber_seminar&act=hapusnarasumber_seminar&id=$tampil[kode_seminar]')></a></td>
              </tr>";
       $no++;
     }

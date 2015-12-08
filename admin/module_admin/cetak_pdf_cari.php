@@ -17,7 +17,7 @@ $tahun = date("Y");
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
 					<div class="stat">Jl. Kemana Saja Hatiku Senang - Bandung</div>
-					<div class="sub-title">LAPORAN DATA PENDAFTARAN</div>
+					<div class="sub-title">LAPORAN DATA MAHASISWA</div>
 					<div class="sub-stat">TAHUN 2015/2016</div>
 					<table>
 						<tr>
@@ -30,30 +30,38 @@ include "../../main/connection.php";
 						</tr>
 						<tr>
 							<td>Oleh</td>
-							<td>: M.Fuad Alfarih S.Kom, M.T</td>
+							<td>: Zamzam Nurzaman S.Kom, M.T</td>
 						</tr>
 					</table><br>';
 	$strhtml .= "<table class='table'>
 					<tr>
-			         <th>No</th>
-          <th>No Daftar</th>
-          <th>Tanggal Daftar</th>
-          <th>Kode Seminar</th>
-          <th>NIM</th>
-			          
+			          <th>No</th>
+			          <th>NIM</th>
+			          <th>Nama Mahasiswa</th>
+			          <th>Jurusan</th>
+			          <th>Telp/HP</th>
+			          <th>E-Mail</th>
 			          
 			        </tr>";
 	$no = 0;
-	$tampil_seminar = mysql_query("SELECT * FROM pendaftaran ORDER BY kode_seminar");
-	while ($tampil=mysql_fetch_array($tampil_seminar)){
+
+	$cari2       =  $_POST["cari2"];
+	$tampil_mahasiswa = mysql_query("SELECT * FROM mahasiswa 
+                              WHERE nim like '%$cari2%' or 
+                               nama like '%$cari2%' or
+                               jurusan like '%$cari2%' or
+                               telepon like '%$cari2%' or
+                              email like '%$cari2%' ");
+
+	while ($tampil=mysql_fetch_array($tampil_mahasiswa)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-       <td>$tampil[no_daftar]</td>
-       <td>$tampil[tanggal_daftar]</td>
-             <td class='tab-col'>$tampil[kode_seminar]</td>
-             <td>$tampil[nim]</td>
-
-            </tr>";
+			         <td>$tampil[nim]</td>
+			         <td>$tampil[nama]</td>
+			         <td>$tampil[jurusan]</td>
+			         <td>$tampil[telepon]</td>
+			         <td>$tampil[email]</td>
+			      </tr>";
 	}
 	$strhtml .= "</table>";
 

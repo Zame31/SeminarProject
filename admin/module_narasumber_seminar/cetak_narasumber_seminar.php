@@ -17,7 +17,7 @@ $tahun = date("Y");
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
 					<div class="stat">Jl. Kemana Saja Hatiku Senang - Bandung</div>
-					<div class="sub-title">LAPORAN DATA PENDAFTARAN</div>
+					<div class="sub-title">LAPORAN DATA NARASUMBER SEMINAR</div>
 					<div class="sub-stat">TAHUN 2015/2016</div>
 					<table>
 						<tr>
@@ -35,25 +35,22 @@ include "../../main/connection.php";
 					</table><br>';
 	$strhtml .= "<table class='table'>
 					<tr>
-			         <th>No</th>
-          <th>No Daftar</th>
-          <th>Tanggal Daftar</th>
-          <th>Kode Seminar</th>
-          <th>NIM</th>
+			          <th>No</th>
+			          <th>Kode Seminar</th>
+			          <th>Kode Narasumber</th>
 			          
 			          
 			        </tr>";
 	$no = 0;
-	$tampil_seminar = mysql_query("SELECT * FROM pendaftaran ORDER BY kode_seminar");
+	$tampil_seminar = mysql_query("SELECT * FROM narasumber_seminar ORDER BY kode_seminar");
 	while ($tampil=mysql_fetch_array($tampil_seminar)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-       <td>$tampil[no_daftar]</td>
-       <td>$tampil[tanggal_daftar]</td>
-             <td class='tab-col'>$tampil[kode_seminar]</td>
-             <td>$tampil[nim]</td>
-
-            </tr>";
+			         <td>$tampil[kode_seminar]</td>
+		             <td>$tampil[kode_narasumber]</td>
+		             
+		             
+		        </tr>";
 	}
 	$strhtml .= "</table>";
 
