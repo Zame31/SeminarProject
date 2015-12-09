@@ -35,22 +35,17 @@ include "../../main/connection.php";
 					</table><br>';
 	$strhtml .= "<table class='table'>
 					<tr>
-			         <th>No</th>
+			          <th>No</th>
 			          <th>Kode Seminar</th>
 			          <th>Kode Sponsor</th>
 			          
 			        </tr>";
 	$no = 0;
-
-	$cari2       =  $_POST["cari2"];
-	$tampil_mahasiswa = mysql_query("SELECT * FROM sponsor_seminar
-               WHERE kode_seminar like '%$cari2%' or 
-                     kode_sponsor like '%$cari2%'");
-
-	while ($tampil=mysql_fetch_array($tampil_mahasiswa)){
+	$tampil_seminar = mysql_query("SELECT * FROM sponsor_seminar ORDER BY kode_seminar");
+	while ($tampil=mysql_fetch_array($tampil_seminar)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-			        <td>$tampil[kode_seminar]</td>
+			         <td>$tampil[kode_seminar]</td>
 		             <td>$tampil[kode_sponsor]</td>
 			      </tr>";
 	}

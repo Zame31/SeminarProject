@@ -17,7 +17,7 @@ $tahun = date("Y");
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
 					<div class="stat">Jl. Kemana Saja Hatiku Senang - Bandung</div>
-					<div class="sub-title">LAPORAN DATA MAHASISWA</div>
+					<div class="sub-title">LAPORAN DATA SEMINAR</div>
 					<div class="sub-stat">TAHUN 2015/2016</div>
 					<table>
 						<tr>
@@ -36,31 +36,45 @@ include "../../main/connection.php";
 	$strhtml .= "<table class='table'>
 					<tr>
 			          <th>No</th>
-			          <th>NIM</th>
-			          <th>Nama Mahasiswa</th>
-			          <th>Jurusan</th>
-			          <th>Telp/HP</th>
-			          <th>E-Mail</th>
+			          <th>Kode Seminar</th>
+			          <th>Tema</th>
+			          <th>Nama Seminar</th>
+			          <th>Penyelenggara</th>
+			          <th>Waktu</th>
+			          <th>Tanggal</th>
+			          <th>Kapasitas</th>
+			          <th>kode Lokasi</th>
+			          <th>Harga</th>
+			          <th>Fasilitas</th>
+			          <th>Banner</th>
 			          
 			        </tr>";
 	$no = 0;
 
 	$cari2       =  $_POST["cari2"];
-	$tampil_mahasiswa = mysql_query("SELECT * FROM mahasiswa 
-                              WHERE nim like '%$cari2%' or 
-                               nama like '%$cari2%' or
-                               jurusan like '%$cari2%' or
-                               telepon like '%$cari2%' or
-                              email like '%$cari2%' ");
+	$tampil_mahasiswa = mysql_query("SELECT * FROM seminar 
+                              WHERE kode_seminar like '%$cari2%'or 
+                               tema like '%$cari2%' or
+                               nama_seminar like '%$cari2%' or
+                               penyelenggara like '%$cari2%' or
+                               waktu like '%$cari2%' or
+                               tanggal like '%$cari2%' or
+                               kode_lokasi like '%$cari2%' or
+                               kapasitas like '%$cari2%'");
 
 	while ($tampil=mysql_fetch_array($tampil_mahasiswa)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-			         <td>$tampil[nim]</td>
-			         <td>$tampil[nama]</td>
-			         <td>$tampil[jurusan]</td>
-			         <td>$tampil[telepon]</td>
-			         <td>$tampil[email]</td>
+			         <td>$tampil[kode_seminar]</td>
+		             <td>$tampil[tema]</td>
+		             <td>$tampil[nama_seminar]</td>
+		             <td>$tampil[penyelenggara]</td>
+		             <td>$tampil[waktu]</td>
+		             <td>$tanggal</td>
+		             <td>$tampil[kapasitas]</td>
+		             <td>$tampil[kode_lokasi]</td>
+		             <td>$tampil[harga]</td>
+		             <td>$tampil[fasilitas]</td>
 			      </tr>";
 	}
 	$strhtml .= "</table>";

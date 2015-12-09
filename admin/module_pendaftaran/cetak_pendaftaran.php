@@ -44,13 +44,13 @@ include "../../main/connection.php";
 			          
 			        </tr>";
 	$no = 0;
-	$tampil_seminar = mysql_query("SELECT * FROM pendaftaran ORDER BY kode_seminar");
+	$tampil_seminar = mysql_query("SELECT * FROM pendaftaran ORDER BY no_daftar");
 	while ($tampil=mysql_fetch_array($tampil_seminar)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-       <td>$tampil[no_daftar]</td>
+       <td class='tab-col'>$tampil[no_daftar]</td>
        <td>$tampil[tanggal_daftar]</td>
-             <td class='tab-col'>$tampil[kode_seminar]</td>
+             <td>$tampil[kode_seminar]</td>
              <td>$tampil[nim]</td>
 
             </tr>";

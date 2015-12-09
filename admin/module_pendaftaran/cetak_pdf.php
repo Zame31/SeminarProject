@@ -17,7 +17,7 @@ $tahun = date("Y");
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
 					<div class="stat">Jl. Kemana Saja Hatiku Senang - Bandung</div>
-					<div class="sub-title">LAPORAN DATA SPONSOR SEMINAR</div>
+					<div class="sub-title">LAPORAN DATA PENDAFTARAN</div>
 					<div class="sub-stat">TAHUN 2015/2016</div>
 					<table>
 						<tr>
@@ -35,23 +35,21 @@ include "../../main/connection.php";
 					</table><br>';
 	$strhtml .= "<table class='table'>
 					<tr>
-			         <th>No</th>
+			           <th>No Daftar</th>
+			          <th>Tanggal Daftar</th>
 			          <th>Kode Seminar</th>
-			          <th>Kode Sponsor</th>
+			          <th>NIM</th>
 			          
 			        </tr>";
 	$no = 0;
-
-	$cari2       =  $_POST["cari2"];
-	$tampil_mahasiswa = mysql_query("SELECT * FROM sponsor_seminar
-               WHERE kode_seminar like '%$cari2%' or 
-                     kode_sponsor like '%$cari2%'");
-
-	while ($tampil=mysql_fetch_array($tampil_mahasiswa)){
+	$tampil_seminar = mysql_query("SELECT * FROM pendaftaran ORDER BY no_daftar");
+	while ($tampil=mysql_fetch_array($tampil_seminar)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-			        <td>$tampil[kode_seminar]</td>
-		             <td>$tampil[kode_sponsor]</td>
+			         <td class='tab-col'>$tampil[no_daftar]</td>
+		       		 <td>$tampil[tanggal_daftar]</td>
+		             <td>$tampil[kode_seminar]</td>
+		             <td>$tampil[nim]</td>
 			      </tr>";
 	}
 	$strhtml .= "</table>";

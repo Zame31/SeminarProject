@@ -2,7 +2,9 @@
   $cari       = $_POST["cari"];
 	$tampilkan = 
   mysql_query("SELECT * FROM pendaftaran
-               WHERE kode_seminar like '%$cari%' or 
+               WHERE no_daftar like '%$cari%' or
+                      tanggal_daftar like '%$cari%' or
+                kode_seminar like '%$cari%' or 
                      nim like '%$cari%'");
 ?>
     <div class="title-content">
@@ -27,8 +29,15 @@
       <div class="col-md-6">
         <div class="btn-group" role="group" aria-label="fungsional">
           <a type="button" class="btn btn-default" href="#tambah_pendaftaran" data-toggle="modal"><i class="fa fa-user-plus"></i></a>
-          <a type="button" class="btn btn-default" href="module_pendaftaran/action_seminar.php?module=data_pendaftaran&act=export"><i class="fa fa-download"> Excel</i></a>
-          <a type="button" class="btn btn-default" href="module_pendaftaran/cetak_seminar.php"><i class="fa fa-print"></i></a>
+          <a type="button" class="btn btn-default" href="module_pendaftaran/action_pendaftaran.php?module=data_pendaftaran&act=export"><i class="fa fa-download"> Excel</i></a>
+          <form action="module_pendaftaran/cetak_pdf_cari.php" method="post">
+            <?php 
+              echo "
+                        <input name='cari2' type='hidden' class='btn btn-default' value='$cari'>
+                  ";
+            ?>
+            <button class="btn btn-default" type="submit"><i class="fa fa-print"></i></button>
+          </form>
       </div>
     </div>
     <!--TABLE-->
@@ -36,7 +45,9 @@
       <thead>
         <tr>
           <th>No</th>
-          <th class="tab-col">Kode Seminar</th>
+         <th width="10px">No Daftar</th>
+          <th width="10px">Waktu Daftar</th>
+          <th>Kode Seminar</th>
           <th>NIM</th>
           
           <th width="80px">Aksi</th>
@@ -47,7 +58,9 @@
     $no=1;
     while ($tampil=mysql_fetch_array($tampilkan)){
        echo "<tr><td>$no</td>
-             <td class='tab-col'>$tampil[kode_seminar]</td>
+             <td>$tampil[no_daftar]</td>
+             <td class='tab-col' width='200px'>$tampil[tanggal_daftar]</td>
+             <td>$tampil[kode_seminar]</td>
              <td>$tampil[nim]</td>
                      
              <td><a href='?module=data_pendaftaran&act=editpendaftaran&id=$tampil[kode_seminar]' class='fa fa-edit'></a>

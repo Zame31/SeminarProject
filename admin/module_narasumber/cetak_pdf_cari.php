@@ -17,7 +17,7 @@ $tahun = date("Y");
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
 					<div class="stat">Jl. Kemana Saja Hatiku Senang - Bandung</div>
-					<div class="sub-title">LAPORAN DATA MAHASISWA</div>
+					<div class="sub-title">LAPORAN DATA NARASUMBER</div>
 					<div class="sub-stat">TAHUN 2015/2016</div>
 					<table>
 						<tr>
@@ -35,32 +35,44 @@ include "../../main/connection.php";
 					</table><br>';
 	$strhtml .= "<table class='table'>
 					<tr>
-			          <th>No</th>
-			          <th>NIM</th>
-			          <th>Nama Mahasiswa</th>
-			          <th>Jurusan</th>
-			          <th>Telp/HP</th>
+			        <th>No</th>
+          			  <th>Kode Narasumber</th>
+			          <th>Nama Narasumber</th>
+			          <th>Gelar</th>
+			          <th>Alamat Narasumber</th>
+			          <th>Pekerjaan</th>
+			          <th>Umur</th>
+			          <th>Jenis Kelamin</th>
+			          <th>Telepon/HP</th>
 			          <th>E-Mail</th>
 			          
 			        </tr>";
 	$no = 0;
 
 	$cari2       =  $_POST["cari2"];
-	$tampil_mahasiswa = mysql_query("SELECT * FROM mahasiswa 
-                              WHERE nim like '%$cari2%' or 
-                               nama like '%$cari2%' or
-                               jurusan like '%$cari2%' or
+	$tampil_mahasiswa = mysql_query("SELECT * FROM narasumber 
+                            WHERE kode_narasumber like '%$cari2%'or 
+                               nama_narasumber like '%$cari2%' or
+                               gelar like '%$cari2%' or
+                               alamat_narasumber like '%$cari2%' or
+                               pekerjaan like '%$cari2%' or
+                               umur like '%$cari2%' or
                                telepon like '%$cari2%' or
-                              email like '%$cari2%' ");
+                               jenis_kelamin like '%$cari2%' or
+                              email like '%$cari2%'");
 
 	while ($tampil=mysql_fetch_array($tampil_mahasiswa)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-			         <td>$tampil[nim]</td>
-			         <td>$tampil[nama]</td>
-			         <td>$tampil[jurusan]</td>
-			         <td>$tampil[telepon]</td>
-			         <td>$tampil[email]</td>
+			         <td>$tampil[kode_narasumber]</td>
+		             <td>$tampil[nama_narasumber]</td>
+		             <td>$tampil[gelar]</td>
+		             <td>$tampil[alamat_narasumber]</td>
+		             <td>$tampil[pekerjaan]</td>
+		             <td>$tampil[umur]</td>
+		             <td>$tampil[jenis_kelamin]</td>
+		             <td>$tampil[telepon]</td>
+		             <td>$tampil[email]</td>
 			      </tr>";
 	}
 	$strhtml .= "</table>";

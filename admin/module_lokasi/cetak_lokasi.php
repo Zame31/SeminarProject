@@ -43,7 +43,7 @@ include "../../main/connection.php";
 			        </tr>";
 	$no = 0;
 	$tampil_lokasi = mysql_query("SELECT * FROM lokasi ORDER BY kode_lokasi");
-	while ($tampil=mysql_fetch_array($tampil_lokasi)){
+	while ($tampil=mysql_fetch_array($tampilkan)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
 			         <td>$tampil[kode_lokasi]</td>

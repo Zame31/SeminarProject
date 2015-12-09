@@ -17,7 +17,7 @@ $tahun = date("Y");
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
 					<div class="stat">Jl. Kemana Saja Hatiku Senang - Bandung</div>
-					<div class="sub-title">LAPORAN DATA MAHASISWA</div>
+					<div class="sub-title">LAPORAN DATA TAMU</div>
 					<div class="sub-stat">TAHUN 2015/2016</div>
 					<table>
 						<tr>
@@ -36,31 +36,43 @@ include "../../main/connection.php";
 	$strhtml .= "<table class='table'>
 					<tr>
 			          <th>No</th>
-			          <th>NIM</th>
-			          <th>Nama Mahasiswa</th>
-			          <th>Jurusan</th>
-			          <th>Telp/HP</th>
+			          <th>Kode Tamu</th>
+			          <th>Nama Tamu</th>
+			          <th>Gelar</th>
+			          <th>Alamat Tamu</th>
+			          <th>Pekerjaan</th>
+			          <th>Umur</th>
+			          <th>Jenis Kelamin</th>
+			          <th>Telepon/HP</th>
 			          <th>E-Mail</th>
 			          
 			        </tr>";
 	$no = 0;
 
 	$cari2       =  $_POST["cari2"];
-	$tampil_mahasiswa = mysql_query("SELECT * FROM mahasiswa 
-                              WHERE nim like '%$cari2%' or 
-                               nama like '%$cari2%' or
-                               jurusan like '%$cari2%' or
+	$tampil_mahasiswa = mysql_query("SELECT * FROM tamu 
+                            WHERE kode_tamu like '%$cari2%'or 
+                               nama_tamu like '%$cari2%' or
+                               gelar like '%$cari2%' or
+                               alamat_tamu like '%$cari2%' or
+                               pekerjaan like '%$cari2%' or
+                               umur like '%$cari2%' or
                                telepon like '%$cari2%' or
-                              email like '%$cari2%' ");
+                               jenis_kelamin like '%$cari2%' or
+                              email like '%$cari2%'");
 
 	while ($tampil=mysql_fetch_array($tampil_mahasiswa)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-			         <td>$tampil[nim]</td>
-			         <td>$tampil[nama]</td>
-			         <td>$tampil[jurusan]</td>
-			         <td>$tampil[telepon]</td>
-			         <td>$tampil[email]</td>
+			         <td>$tampil[kode_tamu]</td>
+		             <td>$tampil[nama_tamu]</td>
+		             <td>$tampil[gelar]</td>
+		             <td>$tampil[alamat_tamu]</td>
+		             <td>$tampil[pekerjaan]</td>
+		             <td>$tampil[umur]</td>
+		             <td>$tampil[jenis_kelamin]</td>
+		             <td>$tampil[telepon]</td>
+		             <td>$tampil[email]</td>
 			      </tr>";
 	}
 	$strhtml .= "</table>";

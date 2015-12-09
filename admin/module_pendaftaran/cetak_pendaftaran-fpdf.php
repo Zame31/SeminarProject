@@ -79,10 +79,10 @@ function FancyTable($header, $data)
 $pdf = new PDF('L','cm','A4'); //ukuran kertas
 
 // Nama Kolom Heading
-$header = array('No', 'Kode Seminar', 'NIM');
+$header = array('No','No Daftar','Tanggal Daftar', 'Kode Seminar', 'NIM');
 
 // Data loading
-$query="select kode_seminar,nim";
+$query="select no_daftar,tanggal_daftar,kode_seminar,nim";
  
 $data = $pdf->LoadDataFromSQL($query);
 $pdf->SetFont('Arial','',9);
