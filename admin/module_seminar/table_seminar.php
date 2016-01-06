@@ -8,7 +8,7 @@
 .stat {
   font-size: 14px;
     padding-bottom: 20px;
-    
+
     text-align: center;
 }
 .sub-title {
@@ -29,7 +29,7 @@ td {
 
 </style>
 <?php
-date_default_tim ezone_set('Asia/Jakarta');
+date_default_timezone_set('Asia/Jakarta');
 
 //Array Hari
 $array_hari = array(1=>"Senin","Selasa","Rabu","Kamis","Jumat", "Sabtu","Minggu");
@@ -53,8 +53,8 @@ echo '
           <br>
           Pukul : '.date("h:i:sa").'
           <br>
-          Oleh : Zamzam Nurzaman S.Kom, M.T
-          
+          Oleh : Admin
+
             <br>
 '
 ?>
@@ -69,14 +69,17 @@ echo '
           <th>Penyelenggara</th>
           <th>Waktu</th>
           <th>Tanggal</th>
+          <th>Kode Lokasi</th>
           <th>Kapasitas</th>
-          <th>kode Lokasi</th>
+          <th>Harga</th>
+          <th>Fasilitas</th>
+          
         </tr>
       </thead>
       <tbody border="1">
 <?php
 	include "../../main/connection.php";
-	$tampil_seminar = mysql_query("SELECT * FROM seminar ORDER BY kode_seminar");        
+	$tampil_seminar = mysql_query("SELECT * FROM seminar ORDER BY kode_seminar");
     $no=1;
     while ($tampil=mysql_fetch_array($tampil_seminar)){
       //Tanggal Format
@@ -88,8 +91,11 @@ echo '
              <td>$tampil[penyelenggara]</td>
              <td>$tampil[waktu]</td>
              <td>$tanggal</td>
-             <td>$tampil[kapasitas]</td>
              <td>$tampil[kode_lokasi]</td>
+             <td>$tampil[kapasitas]</td>
+             <td>$tampil[harga]</td>
+             <td>$tampil[fasilitas]</td>
+
             </tr>
              ";
         $no++;

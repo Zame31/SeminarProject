@@ -34,51 +34,71 @@
 
     $kode_seminar = $_POST["kode_seminar"];
     $tanggal_daftar = date('Y-m-d h:i:s');
-                   
-    $sql    = "INSERT INTO mahasiswa(nim,nama,jurusan,telepon,email) 
+
+    $sql    = "INSERT INTO mahasiswa(nim,nama,jurusan,telepon,email)
                 values ('$nim','$nama','$jurusan','$telepon','$email')";
     $kueri = mysql_query($sql);
 
-    $sql    = "INSERT INTO pendaftaran(tanggal_daftar,kode_seminar,nim) 
+    $sql    = "INSERT INTO pendaftaran(tanggal_daftar,kode_seminar,nim)
                 values ('$tanggal_daftar','$kode_seminar','$nim')";
     $kueri = mysql_query($sql);
+
+    mysql_query("UPDATE seminar SET kapasitas = kapasitas - 1
+                 WHERE kode_seminar = '$kode_seminar'");
   }
 
 
-  $tampil_admin = mysql_query("SELECT nama_seminar,no_daftar 
-                               FROM seminar,pendaftaran 
-                               WHERE seminar.kode_seminar=pendaftaran.kode_seminar AND 
-                                     pendaftaran.kode_seminar='$kode_seminar' AND 
+  $tampil_admin = mysql_query("SELECT nama_seminar,no_daftar,waktu,tanggal
+                               FROM seminar,pendaftaran
+                               WHERE seminar.kode_seminar=pendaftaran.kode_seminar AND
+                                     pendaftaran.kode_seminar='$kode_seminar' AND
                                      pendaftaran.nim='$nim' AND pendaftaran.tanggal_daftar='$tanggal_daftar'");
   $no=1;
   while ($tampil=mysql_fetch_array($tampil_admin)){
 
+    $date2 = $tanggal_daftar;
+
+    $date =  $tampil['tanggal'];
+
+    $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+    $tahun = substr($date, 0, 4);
+    $bulan = substr($date, 5, 2);
+    $tgl   = substr($date, 8, 2);
+    $tanggal = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;
+
+    $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+    $tahun = substr($date2, 0, 4);
+    $bulan = substr($date2, 5, 2);
+    $tgl   = substr($date2, 8, 2);
+    $tanggal2 = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;
     echo "
        <div class='container'>
           <div class='align'>
             <div class='tiket'>
               <div class='tiket-title'>
                 <span> $tampil[nama_seminar]</span>
-                <span class='waktu'>12 Desember 2015 Pukul 12:00 - 14:00</span>
+                <span class='waktu'>$tanggal, Pukul : $tampil[waktu] </span>
               </div>
               <div class='row tiket-body'>
                 <div class='col-lg-4'>Kode Pendaftaran</div>
                 <div class='col-lg-8'>$kode_seminar$tampil[no_daftar]</div>
                 <div class='col-lg-4'>Tanggal Daftar</div>
-                <div class='col-lg-8'>$tanggal_daftar</div>
+                <div class='col-lg-8'>$tanggal2</div>
                 <div class='col-lg-4'>NIM</div>
                 <div class='col-lg-8'>$nim</div>
                 <div class='col-lg-4'>Nama Peserta</div>
                 <div class='col-lg-8'>$nama</div>
                  <div class='col-lg-4'>Jurusan</div>
                 <div class='col-lg-8'>$jurusan</div>
-              </div>    
-            </div>    
+              </div>
+            </div>
           </div>
-          <a type='button' class='btn btn-default tiket-button' href='user/cetak_pdf_user.php'><i class='fa fa-print'></i>Print</a>
+          <div class='but'>
+            <a type='button' class='btn btn-default tiket-button' href='../index.php'>Kembali</a>
+            <a type='button' class='btn btn-default tiket-button' href='cetak.php?id=$tampil[no_daftar]' target='_blank'>Print</a>
+          </div>
         </div>
     ";
   }
   //header('location:../index.php');
 ?>
-

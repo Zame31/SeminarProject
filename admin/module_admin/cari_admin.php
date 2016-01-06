@@ -1,8 +1,8 @@
 <?php
   $cari       = $_POST["cari"];
-	$tampil_admin = 
-  mysql_query("SELECT * FROM admin 
-               WHERE username like '%$cari%' or 
+
+  $tampil_admin = mysql_query("SELECT * FROM admin
+               WHERE username like '%$cari%' or
                      nama_lengkap like '%$cari%' or
                      alamat like '%$cari%' or
                      email like '%$cari%' or
@@ -27,15 +27,26 @@
         </form>
         <a href="?module=data_admin" class="button-reset">Reset</a>
       </div>
+
+      <div class="btn-group" role="group" aria-label="fungsional">
+        <form action="module_admin/cetak_pdf_cari.php" method="post" target="_blank">
+          <?php
+            echo "
+                      <input name='cari2' type='hidden' class='btn btn-default' value='$cari'>
+                ";
+          ?>
+          <button class="btn btn-default in-right" type="submit"><i class="fa fa-print"></i></button>
+        </form>
+        </div>
     </div>
     <!--TABLE-->
     <table cellpadding="0" cellspacing="0" border="0" class="table table-hover tab-mar-top" id="example">
       <?php include "table/table_header.php" ?>
-            <th width="20px">Aksi</th>
+            <th width="70px">Aksi</th>
          </tr>
         </thead>
       <tbody>
-<?php        
+<?php
     $no=1;
     while ($tampil=mysql_fetch_array($tampil_admin)){
        include "table/table_body.php";

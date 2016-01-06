@@ -12,7 +12,7 @@ $bulan = $array_bulan[date("n")];
 //Format Tahun
 $tahun = date("Y");
 
- 
+
 
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
@@ -34,16 +34,20 @@ include "../../main/connection.php";
 						</tr>
 					</table><br>';
 	$strhtml .= "<table class='table'>
-					<tr>
-			          <th>No</th>
-			          <th>Kode Seminar</th>
-			          <th>Tema</th>
-			          <th>Nama Seminar</th>
-			          <th>Penyelenggara</th>
-			          <th>Waktu</th>
-			          <th>Tanggal</th>
-			          <th>Kapasitas</th>
-			          <th>Kode Lokasi</th>
+                <tr>
+                  <th>No</th>
+                  <th>Kode Seminar</th>
+                  <th>Tema</th>
+                  <th>Nama Seminar</th>
+                  <th>Penyelenggara</th>
+                  <th>Waktu</th>
+                  <th>Tanggal</th>
+                  <th>Kode Lokasi</th>
+                  <th>Kapasitas</th>
+                  <th>Harga</th>
+                  <th>Fasilitas</th>
+
+
 			        </tr>";
 	$no = 0;
 	$tampil_seminar = mysql_query("SELECT * FROM seminar ORDER BY kode_seminar");
@@ -53,15 +57,19 @@ include "../../main/connection.php";
 
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-			         <td>$tampil[kode_seminar]</td>
-		             <td>$tampil[tema]</td>
-		             <td>$tampil[nama_seminar]</td>
-		             <td>$tampil[penyelenggara]</td>
-		             <td>$tampil[waktu]</td>
-		             <td>$tanggal</td>
-		             <td>$tampil[kapasitas]</td>
-		             <td>$tampil[kode_lokasi]</td>
-		        </tr>";
+        <td class='tab-col'>$tampil[kode_seminar]</td>
+        <td>$tampil[tema]</td>
+        <td>$tampil[nama_seminar]</td>
+        <td>$tampil[penyelenggara]</td>
+        <td>$tampil[waktu]</td>
+        <td>$tanggal</td>
+        <td>$tampil[kode_lokasi]</td>
+        <td>$tampil[kapasitas]</td>
+        <td>$tampil[harga]</td>
+        <td>$tampil[fasilitas]</td>
+
+       </tr>
+		        ";
 	}
 	$strhtml .= "</table>";
 

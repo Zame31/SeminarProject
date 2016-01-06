@@ -16,7 +16,7 @@ body a, body button, body div{
 	-ms-transition:0.5s all;
 }
 h1,h2,h3,h4,h5,h6{
-	margin:0;			   
+	margin:0;
 }
 p{
 	margin:0;
@@ -38,10 +38,17 @@ a:focus {
 	text-decoration: none;
 }
 .title span.blue {
-	color: #38bdff;	
+	color: #38bdff;
 }
 .form-control {
 	font-size: 12px;
+}
+.in-right {
+	float: right;
+	margin-right: 20px;
+}
+.select-style {
+	color: #000;
 }
 /*---------------------------------------*/
 /*   NAVIGATOR  	                     */
@@ -69,12 +76,12 @@ a:focus {
   color: #efefef;
   border-radius: 4px;
 }
-.nav>li>a:focus, 
+.nav>li>a:focus,
 .nav>li>a:hover {
   background-color: #33363C;
 }
-.nav-pills>li.active>a, 
-.nav-pills>li.active>a:focus, 
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
   background-color: #38bdff;
 }
@@ -96,7 +103,7 @@ a:focus {
 			}
 
 		/*ADMIN*/
-		.admin span{	
+		.admin span{
 			color: #38bdff;
 			display: block;
 			font-size: 10px;
@@ -215,8 +222,8 @@ section {
 		.table>tbody>tr>td a.fa:hover {
 			color: #fff;
 			background: #333131;
-		} 
-		.table>tfoot>tr>td, .table>tfoot>tr>th, 
+		}
+		.table>tfoot>tr>td, .table>tfoot>tr>th,
 		.table>thead>tr>td, .table>thead>tr>th {
 			font-size: 12px;
     	font-weight: 500;
@@ -254,9 +261,9 @@ section {
 		}
 		#tambah_data .form-control {
 			border-radius: 0px;
-	    background: transparent;
-	    border: 1px solid #434857;
-	    color: #fff;
+			background: rgb(44, 47, 53);
+			border: 1px solid #252627;
+			color: #FFF;
 		}
 		#tambah_data .form-control:focus {
 			border-color: #38BDFF;
@@ -303,8 +310,8 @@ section {
 }
 .edit-cont .form-control {
 	border-radius: 0px;
-  background: transparent;
-  border: 1px solid #434857;
+	background: rgb(44, 47, 53);
+    border: 1px solid #252627;
   color: #fff;
 }
 .edit-cont .form-control:focus {
@@ -340,7 +347,7 @@ section {
 .button-reset:hover {
 	color: #fff;
   background: #202020;
-} 
+}
 
 /*---------------------------------------*/
 /*   LOGIN		  	                     */
@@ -355,7 +362,7 @@ section {
 	font-size: 24px;
 	color: #fff;
 	font-family: 'Roboto Condensed', sans-serif;
-	text-transform: none;	
+	text-transform: none;
 }
 .loginadm2 .title span.blue {
 	color: #38BDFF;
@@ -365,7 +372,7 @@ section {
 	display: block;
 }
 .loginadm2 form input.form-control {
-	font-family: 'Roboto Condensed', sans-serif;	
+	font-family: 'Roboto Condensed', sans-serif;
   padding-left: 35px;
   font-weight: 300;
   margin: 10px 0px;
@@ -381,7 +388,7 @@ section {
 	border-color: #38BDFF;
 	webkit-box-shadow: 0px;
     box-shadow: 0px;
-	
+
 }
 .loginadm2 i.fa {
 	    display: inline;
@@ -421,3 +428,24 @@ section {
 }
 .loginadm2 .button:focus {
 	outline: 0;
+}
+
+.valid-true {
+	background: rgb(53, 197, 104);
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.valid-false {
+	background: #E83535;
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}

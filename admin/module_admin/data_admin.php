@@ -18,12 +18,12 @@ switch (@$_GET['act']) {
   break;
   case 'editadmin':
     //EDIT ADMIN
-    include "edit_admin.php"; 
+    include "edit_admin.php";
   break;
   case 'cariadmin':
     //EDIT ADMIN
-    include "cari_admin.php"; 
-  break;  
+    include "cari_admin.php";
+  break;
 }
 //ENDSWITCH
 

@@ -42,15 +42,15 @@
           <th>Harga</th>
           <th>Fasilitas</th>
           <th>Banner</th>
-          <th width="50px">Aksi</th>
+          <th width="30px">Aksi</th>
         </tr>
       </thead>
       <tbody>
 <?php
     $no=1;
     while ($tampil=mysql_fetch_array($tampilkan)){
-      include "/../../main/format_tanggal.php"; 
-    
+      include "/../../main/format_tanggal.php";
+
        echo "<tr><td>$no</td>
              <td class='tab-col'>$tampil[kode_seminar]</td>
              <td>$tampil[tema]</td>

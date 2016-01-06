@@ -28,7 +28,7 @@
         <div class="btn-group" role="group" aria-label="fungsional">
           <a type="button" class="btn btn-default" href="#tambah_tamu_seminar" data-toggle="modal"><i class="fa fa-user-plus"></i></a>
           <a type="button" class="btn btn-default" href="module_tamu_seminar/action_seminar.php?module=data_tamu_seminar&act=export"><i class="fa fa-download"> Excel</i></a>
-          <form action="module_tamu_seminar/cetak_pdf_cari.php" method="post">
+          <form action="module_tamu_seminar/cetak_pdf_cari.php" method="post" target="_blank">>
             <?php 
               echo "
                         <input name='cari2' type='hidden' class='btn btn-default' value='$cari'>

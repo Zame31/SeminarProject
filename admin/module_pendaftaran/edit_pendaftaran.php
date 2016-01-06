@@ -1,5 +1,6 @@
 <?php
-
+$tampilkan = mysql_query("SELECT kode_seminar,nama_seminar FROM seminar ORDER BY kode_seminar");
+$tampilkan2 = mysql_query("SELECT nim,nama FROM mahasiswa ORDER BY nim");
 $edit=mysql_query("SELECT * FROM pendaftaran WHERE no_daftar='$_GET[id]'");
     $ed=mysql_fetch_array($edit);
 ?>
@@ -16,22 +17,34 @@ $edit=mysql_query("SELECT * FROM pendaftaran WHERE no_daftar='$_GET[id]'");
               <input type='text' class='form-control' name='no_daftar' value='$ed[no_daftar]' disabled>
             </div>
           </div>
+
            <div class='form-group'>
             <label class='col-lg-2 control-label'> Kode Seminar</label>
             <div class='col-lg-10'>
-              <input type='text' class='form-control' name='kode_seminar' value='$ed[kode_seminar]'>
+            <select class='form-control select-style' name='kode_seminar' required>
+                <option value='$ed[kode_seminar]'>$ed[kode_seminar] </option>";
+                while ($tampil=mysql_fetch_array($tampilkan)){
+                echo "<option value='$tampil[kode_seminar]'>$tampil[kode_seminar] ($tampil[nama_seminar]) </option>";
+              }
+            echo "
+            </select>
             </div>
           </div>
+
           <div class='form-group'>
-            <label class='col-lg-2 control-label'> NIM</label>
-            <div class='col-lg-10'>
-              <input type='text' class='form-control' name='nim' value='$ed[nim]'>
-            </div>
-          </div>
-          
-         
+           <label class='col-lg-2 control-label'> NIM</label>
+           <div class='col-lg-10'>
+           <select class='form-control select-style' name='nim' required>
+               <option value='$ed[nim]'>$ed[nim] </option>";
+               while ($tampil=mysql_fetch_array($tampilkan2)){
+               echo "<option value='$tampil[nim]'>$tampil[nim] ($tampil[nama]) </option>";
+             }
+           echo "
+           </select>
+           </div>
+         </div>
              <div class='col-lg-10'>";
-             
+
     echo '
           <div class="button-edit">
             <button class="button-foot" onclick=self.history.back()>Close</button>

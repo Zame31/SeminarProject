@@ -1,7 +1,7 @@
 <?php
   $cari       = $_POST["cari"];
-	$tampilkan = mysql_query("SELECT * FROM seminar 
-                              WHERE kode_seminar like '%$cari%'or 
+	$tampilkan = mysql_query("SELECT * FROM seminar
+                              WHERE kode_seminar like '%$cari%'or
                                tema like '%$cari%' or
                                nama_seminar like '%$cari%' or
                                penyelenggara like '%$cari%' or
@@ -23,7 +23,7 @@
             <input name="cari" type="text" class="form-control" placeholder="Search for...">
             <span class="input-group-btn">
               <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-              
+
             </span>
           </div>
 
@@ -32,16 +32,14 @@
       </div>
       <div class="col-md-6">
         <div class="btn-group" role="group" aria-label="fungsional">
-          <a type="button" class="btn btn-default" href="#tambah_seminar" data-toggle="modal"><i class="fa fa-user-plus"></i></a>
-          <a type="button" class="btn btn-default" href="module_seminar/action_seminar.php?module=data_seminar&act=export"><i class="fa fa-download"> Excel</i></a>
-          
-          <form action="module_seminar/cetak_pdf_cari.php" method="post">
-            <?php 
+
+          <form action="module_seminar/cetak_pdf_cari.php" method="post" target="_blank">
+            <?php
               echo "
                         <input name='cari2' type='hidden' class='btn btn-default' value='$cari'>
                   ";
             ?>
-            <button class="btn btn-default" type="submit"><i class="fa fa-print"></i></button>
+            <button class="btn btn-default in-right" type="submit"><i class="fa fa-print"></i></button>
           </form>
          <!-- <a type="button" class="btn btn-default" href="module_seminar/cetak_seminar.php"><i class="fa fa-print"></i></a>-->
         </div>
@@ -64,7 +62,7 @@
         </tr>
       </thead>
       <tbody>
-<?php        
+<?php
     $no=1;
     while ($tampil=mysql_fetch_array($tampilkan)){
     //Tanggal Format
@@ -84,7 +82,7 @@
              }else {
               echo "$tampil[banner]";
              }
-             echo " 
+             echo "
              <td><a href='?module=data_seminar&act=editseminar&id=$tampil[kode_seminar]' class='fa fa-edit'></a>
              <a class='fa fa-remove' href=javascript:confirmdelete('$action?module=data_seminar&act=hapusseminar&id=$tampil[kode_seminar]')></a></td>
              </tr>";

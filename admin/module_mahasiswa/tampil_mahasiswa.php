@@ -29,11 +29,11 @@
     <!--TABLE-->
     <table cellpadding="0" cellspacing="0" border="0" class="table table-hover tab-mar-top" id="example">
       <?php include "table/table_header.php" ?>
-          <th width="20px">Aksi</th>
+          <th width="30px">Aksi</th>
         </tr>
       </thead>
       <tbody>
-<?php        
+<?php
     $no=1;
     while ($tampil=mysql_fetch_array($tampil_admin)){
        include "table/table_body.php";

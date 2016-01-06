@@ -40,11 +40,11 @@
           <th>Jenis Kelamin</th>
           <th>Telepon/HP</th>
           <th>E-Mail</th>
-          <th width="50px">Aksi</th>
+          <th width="30px">Aksi</th>
         </tr>
       </thead>
       <tbody>
-<?php        
+<?php
     $no=1;
     while ($tampil=mysql_fetch_array($tampilkan)){
        echo "<tr><td>$no</td>

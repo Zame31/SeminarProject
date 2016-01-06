@@ -8,7 +8,7 @@
 .stat {
   font-size: 14px;
     padding-bottom: 20px;
-    
+
     text-align: center;
 }
 .sub-title {
@@ -42,8 +42,8 @@ echo '
           <br>
           Pukul : '.date("h:i:sa").'
           <br>
-          Oleh : Zamzam Nurzaman S.Kom, M.T
-          
+          Oleh : Admin
+
             <br>
 '
 ?>
@@ -56,7 +56,7 @@ echo '
       <tbody border="1">
 <?php
 	include "../../main/connection.php";
-	$tampil_mahasiswa = mysql_query("SELECT * FROM mahasiswa ORDER BY nim");        
+	$tampil_mahasiswa = mysql_query("SELECT * FROM mahasiswa ORDER BY nim");
     $no=1;
     while ($tampil=mysql_fetch_array($tampil_mahasiswa)){
        include "table/table_body.php";

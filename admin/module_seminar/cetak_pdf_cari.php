@@ -12,7 +12,7 @@ $bulan = $array_bulan[date("n")];
 //Format Tahun
 $tahun = date("Y");
 
- 
+
 
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
@@ -46,14 +46,14 @@ include "../../main/connection.php";
 			          <th>kode Lokasi</th>
 			          <th>Harga</th>
 			          <th>Fasilitas</th>
-			          <th>Banner</th>
-			          
+			        
+
 			        </tr>";
 	$no = 0;
 
 	$cari2       =  $_POST["cari2"];
-	$tampil_mahasiswa = mysql_query("SELECT * FROM seminar 
-                              WHERE kode_seminar like '%$cari2%'or 
+	$tampil_mahasiswa = mysql_query("SELECT * FROM seminar
+                              WHERE kode_seminar like '%$cari2%'or
                                tema like '%$cari2%' or
                                nama_seminar like '%$cari2%' or
                                penyelenggara like '%$cari2%' or

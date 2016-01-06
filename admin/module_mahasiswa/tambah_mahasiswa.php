@@ -1,3 +1,5 @@
+<?php include "module_mahasiswa/validasi/valid_nim.php"; ?>
+<?php include "module_mahasiswa/validasi/valid_telepon.php"; ?>
 <div class="modal fade" id="tambah_data" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -9,7 +11,8 @@
             <div class="form-group">
               <label for="admin-usr" class="col-lg-4 control-label"> NIM : </label>
               <div class="col-lg-8">
-                <input type="text" class="form-control" name="nim" placeholder="NIM">
+                <input id="nim" type="text" class="form-control" name="nim" placeholder="NIM">
+                <span id="availability_status"></span>
               </div>
             </div>
             <div class="form-group">
@@ -27,7 +30,8 @@
              <div class="form-group">
               <label for="admin-name" class="col-lg-4 control-label"> Telepon : </label>
               <div class="col-lg-8">
-                <input type="text" class="form-control" name="telepon" placeholder="Telepon">
+                <input id="telepon" type="text" class="form-control" name="telepon" placeholder="Telepon">
+                <span id="availability_status2"></span>
               </div>
             </div>
              <div class="form-group">
@@ -35,7 +39,7 @@
               <div class="col-lg-8">
                 <input type="text" class="form-control" name="email" placeholder="email">
               </div>
-            </div> 
+            </div>
 
         </div>
         <div class="modal-footer">

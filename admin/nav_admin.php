@@ -12,8 +12,10 @@ if ($_GET['module']=='beranda'){
           <li role="presentation"><a href="?module=data_lokasi">Data Lokasi</a></li>
           <li role="presentation"><a href="?module=data_pendaftaran">Data Pendaftaran</a></li>
           <li role="presentation"><a href="?module=data_sponsor_seminar">Data Sponsor Seminar</a></li>
+          <li role="presentation"><a href="?module=data_narasumber_seminar">Data Narasumber Seminar</a></li>
+          <li role="presentation"><a href="?module=data_tamu_seminar">Data Tamu Seminar</a></li>
           ';
-         
+
       }
  elseif ($_GET['module']=='data_admin'){
          echo '
@@ -74,7 +76,7 @@ if ($_GET['module']=='beranda'){
                        <li role="presentation"><a href="?module=data_narasumber">Data Narasumber</a></li>
                        <li role="presentation"><a href="?module=data_sponsor">Data Sponsor</a></li>
                        <li role="presentation"><a href="?module=data_lokasi">Data Lokasi</a></li>
-                       <li role="presentation"><a href="?module=data_pendaftaran">Data Pendaftaran/a></li>
+                       <li role="presentation"><a href="?module=data_pendaftaran">Data Pendaftaran</a></li>
                        <li role="presentation"><a href="?module=data_sponsor_seminar">Data Sponsor Seminar</a></li>
                        <li role="presentation"><a href="?module=data_narasumber_seminar">Data Narasumber Seminar</a></li>
                        <li role="presentation"><a href="?module=data_tamu_seminar">Data Tamu Seminar</a></li>
@@ -129,7 +131,7 @@ if ($_GET['module']=='beranda'){
                              <li role="presentation"><a href="?module=data_tamu_seminar">Data Tamu Seminar</a></li>
                          ';
                      }
-                     
+
     elseif ($_GET['module']=='data_pendaftaran'){
                         echo '
                              <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
@@ -199,6 +201,3 @@ if ($_GET['module']=='beranda'){
                          ';
                      }
 ?>
-
-
-      

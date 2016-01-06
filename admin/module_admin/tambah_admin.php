@@ -1,17 +1,8 @@
-<!--Validasi-->
-<script type="text/javascript">
-    window.onload = function () {
-    document.getElementById("password").onchange = validatePassword;
-    document.getElementById("re-password").onchange = validatePassword;
-    }
-    function validatePassword(){
-    var pass2=document.getElementById("re-password").value;
-    var pass1=document.getElementById("password").value;
-    if(pass1!=pass2)
-    document.getElementById("re-password").setCustomValidity("Passwords Tidak Sama");
-    else
-    document.getElementById("re-password").setCustomValidity('');}
-</script>
+<?php include "module_admin/validasi/valid_password.php"; ?>
+<?php include "module_admin/validasi/valid_username.php"; ?>
+<?php include "module_admin/validasi/valid_telepon.php"; ?>
+<?php include "module_admin/validasi/valid_email.php"; ?>
+
 
 <div class="modal fade" id="tambah_data" role="dialog">
   <div class="modal-dialog">
@@ -24,7 +15,8 @@
             <div class="form-group">
               <label for="admin-usr" class="col-lg-4 control-label"> Username : </label>
               <div class="col-lg-8">
-                <input type="text" class="form-control" name="username" placeholder="username">
+                <input id="username" type="text" class="form-control" name="username"  placeholder="username" required>
+                <span id="availability_status"></span>
               </div>
             </div>
             <div class="form-group">
@@ -42,27 +34,30 @@
             <div class="form-group">
               <label for="admin-name" class="col-lg-4 control-label"> Nama Lengkap : </label>
               <div class="col-lg-8">
-                <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap">
+                <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap" required>
               </div>
             </div>
 
             <div class="form-group">
               <label for = "admin-alamat" class="col-lg-4 control-label">alamat : </label>
               <div class="col-lg-8">
-                <textarea class="form-control" name="alamat" rows="8"></textarea>
+                <textarea class="form-control" name="alamat" rows="8" required></textarea>
               </div>
             </div>
 
              <div class="form-group">
               <label for="admin-name" class="col-lg-4 control-label"> E-Mail : </label>
               <div class="col-lg-8">
-                <input type="text" class="form-control" name="email" placeholder="E-Mail">
+                <input id="email" type="text"  class="form-control" name="email" placeholder="E-Mail" required>
+                <span id="availability_status3"></span>
+
               </div>
             </div>
              <div class="form-group">
               <label for="admin-name" class="col-lg-4 control-label"> Telp/HP </label>
               <div class="col-lg-8">
-                <input type="text" class="form-control" name="telp" placeholder="Telp/HP">
+                <input id="telp" type="text" class="form-control" name="telp" placeholder="Telp/HP" required>
+                <span id="availability_status2"></span>
               </div>
             </div>
              <div class="form-group">

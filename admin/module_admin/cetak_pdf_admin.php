@@ -17,7 +17,7 @@ $strhtml = '<div class="title">SEMINAR KAMPUS</div>
 					</tr>
 					<tr>
 						<td>Oleh</td>
-						<td>: Zamzam Nurzaman S.Kom, M.T</td>
+						<td>: Admin</td>
 					</tr>
 				</table><br>';
 $strhtml .= "<table class='table'>

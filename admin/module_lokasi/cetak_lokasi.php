@@ -12,7 +12,7 @@ $bulan = $array_bulan[date("n")];
 //Format Tahun
 $tahun = date("Y");
 
- 
+
 
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
@@ -30,7 +30,7 @@ include "../../main/connection.php";
 						</tr>
 						<tr>
 							<td>Oleh</td>
-							<td>: M.Fuad Alfarih S.Kom, M.T</td>
+							<td>: Admin</td>
 						</tr>
 					</table><br>';
 	$strhtml .= "<table class='table'>
@@ -43,14 +43,14 @@ include "../../main/connection.php";
 			        </tr>";
 	$no = 0;
 	$tampil_lokasi = mysql_query("SELECT * FROM lokasi ORDER BY kode_lokasi");
-	while ($tampil=mysql_fetch_array($tampilkan)){
+	while ($tampil=mysql_fetch_array($tampil_lokasi)){
 	$no++;
 	$strhtml .= "<tr><td>$no</td>
-			         <td>$tampil[kode_lokasi]</td>
+			          <td>$tampil[kode_lokasi]</td>
 		             <td>$tampil[nama_lokasi]</td>
 		             <td>$tampil[alamat]</td>
 		             <td>$tampil[harga_sewa]</td>
-		        </tr>";
+			      </tr>";
 	}
 	$strhtml .= "</table>";
 

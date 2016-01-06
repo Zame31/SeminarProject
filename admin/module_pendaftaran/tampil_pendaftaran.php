@@ -34,11 +34,11 @@
           <th width="10px">Waktu Daftar</th>
           <th class="tab-col">Kode Seminar</th>
           <th>NIM</th>
-          <th width="50px">Aksi</th>
+          <th width="30px">Aksi</th>
         </tr>
       </thead>
       <tbody>
-<?php        
+<?php
     $no=1;
     while ($tampil=mysql_fetch_array($tampilkan)){
        echo "<tr>
@@ -46,7 +46,7 @@
              <td class='tab-col' width='200px'>$tampil[tanggal_daftar]</td>
              <td>$tampil[kode_seminar]</td>
              <td>$tampil[nim]</td>
-             
+
              <td><a href='?module=data_pendaftaran&act=editpendaftaran&id=$tampil[no_daftar]' class='fa fa-edit'></a>
              <a class='fa fa-remove' href=javascript:confirmdelete('$action?module=data_pendaftaran&act=hapuspendaftaran&id=$tampil[no_daftar]')></a></td>
       </tr>";

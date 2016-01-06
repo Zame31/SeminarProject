@@ -12,7 +12,7 @@ $bulan = $array_bulan[date("n")];
 //Format Tahun
 $tahun = date("Y");
 
- 
+
 
 include "../../main/connection.php";
 	$strhtml = '<div class="title">SEMINAR KAMPUS</div>
@@ -35,19 +35,19 @@ include "../../main/connection.php";
 					</table><br>';
 	$strhtml .= "<table class='table'>
 					<tr>
-			         <th>No</th>
+			      
           <th>No Daftar</th>
           <th>Tanggal Daftar</th>
           <th>Kode Seminar</th>
           <th>NIM</th>
-			          
-			          
+
+
 			        </tr>";
 	$no = 0;
 	$tampil_seminar = mysql_query("SELECT * FROM pendaftaran ORDER BY no_daftar");
 	while ($tampil=mysql_fetch_array($tampil_seminar)){
 	$no++;
-	$strhtml .= "<tr><td>$no</td>
+	$strhtml .= "<tr>
        <td class='tab-col'>$tampil[no_daftar]</td>
        <td>$tampil[tanggal_daftar]</td>
              <td>$tampil[kode_seminar]</td>

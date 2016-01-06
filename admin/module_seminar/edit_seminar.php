@@ -73,9 +73,9 @@ $edit=mysql_query("SELECT * FROM seminar WHERE kode_seminar='$_GET[id]'");
            <div class='form-group'>
             <label for='admin-usr' class='col-lg-2 control-label'> Banner</label>
             <div class='col-lg-10'>
-            <input type='text' class='form-control' name='banner_def' value='$ed[banner]'>
+            <input type='hidden' class='form-control' name='banner_def' value='$ed[banner]'>
                 <input type='file' class='form-control' name='banner'>
-                
+
                 <p class='help-block'>Format gambar(jpg/jpeg) dan Ukuran Maksimal 5Mb</p>
               </div>
             </div>

@@ -8,7 +8,7 @@
 .stat {
   font-size: 14px;
     padding-bottom: 20px;
-    
+
     text-align: center;
 }
 .sub-title {
@@ -41,7 +41,7 @@ echo '
   <br>
   Pukul : '.date("h:i:sa").'
   <br>
-  Oleh : Zamzam Nurzaman S.Kom, M.T
+  Oleh : Admin
             <br>
 '
 ?>
@@ -54,7 +54,7 @@ echo '
       <tbody border="1">
 <?php
 	include "../../main/connection.php";
-	$tampil_admin = mysql_query("SELECT * FROM admin ORDER BY username");        
+	$tampil_admin = mysql_query("SELECT * FROM admin ORDER BY username");
     $no=1;
     while ($tampil=mysql_fetch_array($tampil_admin)){
         include "table/table_body.php";

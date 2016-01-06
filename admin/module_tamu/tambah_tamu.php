@@ -43,11 +43,17 @@
               </div>
              </div>
              <div class="form-group">
-                <label for="admin-name" class="col-lg-4 control-label"> Jenis Kelamin : </label>
-                <div class="col-lg-8">
-                   <input type="text" class="form-control" name="jk" placeholder="Jenis Kelamin">
-               </div>
-             </div>
+              <label for="admin-name" class="col-lg-4 control-label"> Jenis Kelamin </label>
+              <div class="col-lg-8">
+                <label class="radio-inline">
+                  <input type="radio" name="jk" value="Laki-Laki"> Laki-Laki
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="jk" value="Perempuan"> Perempuan
+                </label>
+              </div>
+            </div>
+             
              <div class="form-group">
               <label for="admin-name" class="col-lg-4 control-label"> Telepon : </label>
               <div class="col-lg-8">
@@ -59,7 +65,7 @@
               <div class="col-lg-8">
                 <input type="text" class="form-control" name="email" placeholder="email">
               </div>
-            </div> 
+            </div>
 
         </div>
         <div class="modal-footer">
