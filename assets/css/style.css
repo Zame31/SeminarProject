@@ -449,3 +449,67 @@ section {
     display: inline-block;
     margin-top: 5px;
 }
+
+/*content beranda*/
+
+.fitur {
+	margin-right: 10px;
+	    color: #fff;
+	background: #38BDFF;
+border-radius: 5px;
+display: inline;
+font-size: 16px;
+padding: 30px;
+font-weight: bold;
+    float: left;
+}
+.fitur:hover,
+.fitur2:hover,
+.fitur2:active,
+.fitur:active {
+	background: #07A5F3;
+	color: #fff;
+}
+
+.fitur2:hover {
+	color: #fff;
+}
+.fitur2 {
+	margin-right: 10px;
+    color: #fff;
+    background: #38BDFF;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 14px;
+    padding: 30px;
+}
+.restore:hover {
+	    background: #1A74A0;
+			transition:0.5s all;
+			-webkit-transition:0.5s all;
+			-moz-transition:0.5s all;
+			-o-transition:0.5s all;
+			-ms-transition:0.5s all;
+}
+.restore {
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+    background: #4C515D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.berhasil {
+	color: white;
+    font-size: 12px;
+    margin-left: 200px;
+    margin-top: 10px;
+    background: #0885C3;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

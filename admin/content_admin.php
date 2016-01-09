@@ -2,7 +2,7 @@
 include "../main/connection.php";
 
  if ($_GET['module']=='beranda'){
- 		echo "selamat datang di beranda";   
+ 		include "module_beranda/data_beranda.php";
       }
  elseif ($_GET['module']=='data_admin'){
           include "module_admin/data_admin.php";

@@ -2,7 +2,7 @@
 <?php
 if ($_GET['module']=='beranda'){
     echo '
-          <li role="presentation" class="active space-top"><a href="admin.php?module=beranda">Home</a></li>
+          <li role="presentation" class="active space-top"><a href="?module=beranda">Home</a></li>
           <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
           <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
           <li role="presentation" ><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -19,7 +19,7 @@ if ($_GET['module']=='beranda'){
       }
  elseif ($_GET['module']=='data_admin'){
          echo '
-              <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+              <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
               <li role="presentation" class="active"><a href="?module=data_admin">Data Admin</a></li>
               <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
               <li role="presentation"><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -35,7 +35,7 @@ if ($_GET['module']=='beranda'){
       }
   elseif ($_GET['module']=='data_seminar'){
          echo '
-              <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+              <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
               <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
               <li role="presentation" class="active"><a href="?module=data_seminar">Data Seminar</a></li>
               <li role="presentation" ><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -52,7 +52,7 @@ if ($_GET['module']=='beranda'){
 
    elseif ($_GET['module']=='data_mahasiswa'){
                echo '
-                    <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+                    <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
                     <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
                     <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
                     <li role="presentation" class="active"><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -68,7 +68,7 @@ if ($_GET['module']=='beranda'){
             }
    elseif ($_GET['module']=='data_tamu'){
                   echo '
-                       <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+                      <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
                        <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
                        <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
                        <li role="presentation"><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -84,7 +84,7 @@ if ($_GET['module']=='beranda'){
                }
    elseif ($_GET['module']=='data_narasumber'){
                      echo '
-                          <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+                          <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
                           <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
                           <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
                           <li role="presentation"><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -100,7 +100,7 @@ if ($_GET['module']=='beranda'){
                   }
    elseif ($_GET['module']=='data_sponsor'){
                         echo '
-                             <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+                            <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
                              <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
                              <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
                              <li role="presentation"><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -117,7 +117,7 @@ if ($_GET['module']=='beranda'){
 
     elseif ($_GET['module']=='data_lokasi'){
                         echo '
-                             <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+                            <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
                              <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
                              <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
                              <li role="presentation"><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -134,7 +134,7 @@ if ($_GET['module']=='beranda'){
 
     elseif ($_GET['module']=='data_pendaftaran'){
                         echo '
-                             <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+                              <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
                              <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
                              <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
                              <li role="presentation"><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -151,7 +151,7 @@ if ($_GET['module']=='beranda'){
                      }
      elseif ($_GET['module']=='data_sponsor_seminar'){
                         echo '
-                             <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+                              <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
                              <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
                              <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
                              <li role="presentation"><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -168,7 +168,7 @@ if ($_GET['module']=='beranda'){
                      }
       elseif ($_GET['module']=='data_narasumber_seminar'){
                         echo '
-                             <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+                            <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
                              <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
                              <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
                              <li role="presentation"><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
@@ -185,7 +185,7 @@ if ($_GET['module']=='beranda'){
                      }
       elseif ($_GET['module']=='data_tamu_seminar'){
                         echo '
-                             <li role="presentation" class="space-top"><a href="admin.php?module=beranda">Home</a></li>
+                          <li role="presentation" class="space-top"><a href="?module=beranda">Home</a></li>
                              <li role="presentation"><a href="?module=data_admin">Data Admin</a></li>
                              <li role="presentation"><a href="?module=data_seminar">Data Seminar</a></li>
                              <li role="presentation"><a href="?module=data_mahasiswa">Data Mahasiswa</a></li>
